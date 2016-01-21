@@ -36,9 +36,22 @@ public class Calcualdora
      * Muestra la suma de números entre 0 y 10 estos incluidos
      */
     public void sumValues(){
-        int cont = 1;
+        int cont = 0;
         int sum = 0;
         while(cont <= 10){
+            sum+= cont;
+            cont++;
+        }
+        System.out.println(sum);
+    }
+    
+    /**
+     * Muestra la suma de números entre dos números dados estos incluidos
+     */
+    public void sumValuesInterval(int valor1, int valor2){
+        int cont = valor1;
+        int sum = 0;
+        while(cont <= valor2){
             sum+= cont;
             cont++;
         }
