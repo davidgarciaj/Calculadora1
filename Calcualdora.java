@@ -48,13 +48,22 @@ public class Calcualdora
     /**
      * Muestra la suma de números entre dos números dados estos incluidos
      */
-    public void sumValuesInterval(int valor1, int valor2){
+    public int sumValuesInterval(int valor1, int valor2){
+        if( valor2 < valor1){
+            int cambio = valor2;
+            valor2 = valor1;
+            valor1 = cambio;
+        }
         int cont = valor1;
         int sum = 0;
         while(cont <= valor2){
             sum+= cont;
             cont++;
         }
-        System.out.println(sum);
+        return sum;
     }
+    
+    /**
+     * 
+     */
 }
