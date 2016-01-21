@@ -50,20 +50,44 @@ public class Calcualdora
      */
     public int sumValuesInterval(int valor1, int valor2){
         if( valor2 < valor1){
-            int cambio = valor2;
-            valor2 = valor1;
-            valor1 = cambio;
+            int cambio = valor1;
+            valor1 = valor2;
+            valor2 = cambio;
         }
         int cont = valor1;
         int sum = 0;
-        while(cont <= valor2){
-            sum+= cont;
-            cont++;
+        if(valor1 == valor2){
+            sum = valor1;
+        }
+        else if((valor1 < 0) || (valor2 < 0)){
+            sum = -1;
+        }
+        else{
+            while(cont <= valor2){
+                sum+= cont;
+                cont++;
+            }
         }
         return sum;
     }
     
     /**
-     * 
+     * Devuelbe si un número dado es primo o no
      */
+    public boolean isPrime(int valor){
+        boolean esPrimo = true;
+        int probador = 2;
+        if(valor > 1){
+            while(probador == valor-1 || !esPrimo){
+                if(valor % probador == 0){
+                    esPrimo = false;
+                }
+            }
+        }
+        else{
+            System.out.println("El número dado es negativo, cero o uno; Es un valor invalido como número primo.");
+            esPrimo = false;
+        }
+        return esPrimo;
+    }
 }
