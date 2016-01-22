@@ -19,11 +19,11 @@ public class Calculadora
     }
 
     /**
-     *Muestra los numeros ente 5 y 95 
+     *Muestra los numeros ente 10 y 95 
      */
     public void multiplesOfFive()
     {
-        int cont = 6;
+        int cont = 11;
         while(cont < 95){
             if(cont % 5 == 0){
                 System.out.println(cont);
@@ -91,5 +91,24 @@ public class Calculadora
             esPrimo = false;
         }
         return esPrimo;
+    }
+    
+    /**
+     * Multiplica valores enteros positivos
+     */
+    public int calculaMultiplicacion(int a, int b){
+        int resul =-1;
+        int cont = 0;
+        if(a > 0 && b > 0){
+            resul = 0;
+            while(cont != a){
+                resul+= b;
+                cont++;
+            }
+        }
+        else{
+            System.out.println("Al menos uno de los números es negativo.");
+        }
+        return resul;
     }
 }
