@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Calcualdora
+public class Calculadora
 {
     // instance variables - replace the example below with your own
     
@@ -13,7 +13,7 @@ public class Calcualdora
     /**
      * Constructor for objects of class Calcualdora
      */
-    public Calcualdora()
+    public Calculadora()
     {
        
     }
@@ -56,11 +56,12 @@ public class Calcualdora
         }
         int cont = valor1;
         int sum = 0;
-        if(valor1 == valor2){
-            sum = valor1;
-        }
-        else if((valor1 < 0) || (valor2 < 0)){
+        if(valor1 < 0){
             sum = -1;
+            System.out.println("Error. Al menos un número es negativo.");
+        }
+        else if(valor1 == valor2){
+            sum = valor1;
         }
         else{
             while(cont <= valor2){
@@ -78,10 +79,11 @@ public class Calcualdora
         boolean esPrimo = true;
         int probador = 2;
         if(valor > 1){
-            while(probador == valor-1 || !esPrimo){
+            while((probador < valor-1) && (esPrimo)){
                 if(valor % probador == 0){
                     esPrimo = false;
                 }
+                probador++;
             }
         }
         else{
